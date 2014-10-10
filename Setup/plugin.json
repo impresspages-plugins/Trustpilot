@@ -1,0 +1,29 @@
+{
+    "title": "Trustpilot",
+    "version": "1.00",
+    "name": "Trustpilot",
+    "description": "This Trustpilot plugin/widget helps you display Trustpilot reviews on your website.",
+    "author": "Eugene Azuka ",
+    "options": [
+        {
+            "label": "",
+            "name": "",
+            "type": "Info",
+            "html": "<p class=\"alert alert-info\"> Your Trustpilot domain Id can be found in the snippet in: <a href=\"http://b2b.trustpilot.com/Modules/TrustBox2\" target=\"blank\">http://b2b.trustpilot.com/Modules/TrustBox2.</a></p>"
+        },
+        {
+            "label": "Trustpilot Domain Id:",
+            "name": "domainId",
+            "type": "text",
+            "hint": "Enter the TrustPilot account from which reviews have to be taken",
+            "default": ""
+        },
+        {
+            "label": "Cache Time Limit (in seconds):",
+            "name": "timeLimit",
+            "type": "text",
+            "hint": "Enter how long you want cache to be stored in seconds",
+            "default": "10800"
+        }
+    ]
+}

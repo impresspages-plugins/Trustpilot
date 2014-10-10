@@ -1,0 +1,48 @@
+
+.ipPluginTrustpilot .reviews .review {
+    margin-bottom: 40px;
+	width: 33.3333%;
+	text-align: center;
+	float: left;
+	padding-right: 5%;
+}
+
+.ipPluginTrustpilot .reviews > div:first-child {
+	padding-left: 0;
+}
+
+.ipPluginTrustpilot .reviews .review h3{
+	margin: 10px 0px 5px 0;
+}
+
+.ipPluginTrustpilot .reviews .review .user-img {
+    border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	margin-right: 8px;
+}
+
+.ipPluginTrustpilot .reviews .review .author {
+    display: inline-block;
+    padding-top: 4px;
+	padding-right: 10px;
+}
+
+.ipPluginTrustpilot .reviews .review .date {
+    padding-top: 4px;
+    display: inline-block;
+}
+
+.ipPluginTrustpilot .reviews .review .date:before {
+	content: "-";
+	display: inline-block;
+	float: left;
+	padding-right: 7px;
+}
+
+@media (max-width: 385px) {
+	.ipPluginTrustpilot .reviews .review {
+		width: 100%;
+		padding-right: 0;
+	}
+}
