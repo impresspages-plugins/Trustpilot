@@ -184,7 +184,9 @@ class Trustpilot
             curl_setopt($ch, CURLOPT_AUTOREFERER, TRUE);
             curl_setopt($ch, CURLOPT_HEADER, 0);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+            if (ini_get('open_basedir') == '' && ini_get('safe_mode') == 'Off') {
+                curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+            }
             $data = curl_exec($ch);
             curl_close($ch);
 
