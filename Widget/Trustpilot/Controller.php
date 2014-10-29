@@ -29,7 +29,7 @@ class Controller extends \Ip\WidgetController
         $storage = new \Plugin\Trustpilot\Storage();
         $trustpilot = new \Plugin\Trustpilot\Trustpilot\Trustpilot($domainId, $storage);
         $allReviews = $trustpilot->getReviews();
-        $data['reviews'] = array_slice($allReviews, 1, $reviewLimit * 10000);
+        $data['reviews'] = array_slice($allReviews, 1, $reviewLimit);
         $data['trustpilot'] = $trustpilot;
 
         return parent::generateHtml($revisionId, $widgetId, $data, $skin);

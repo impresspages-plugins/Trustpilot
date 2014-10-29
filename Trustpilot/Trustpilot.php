@@ -31,7 +31,8 @@ class Trustpilot
      *
      * @var string
      */
-    const FEED = 'http://s.trustpilot.com/tpelements/%s/f.json.gz';
+    //const FEED = 'http://s.trustpilot.com/tpelements/%s/f.json.gz';
+    const FEED = 'http://s.trustpilot.com/tpelements/%s/f.json'; //Mangirdas Skripka - don't use compressed api as it fails on some servers
 
 
     /**
@@ -158,7 +159,7 @@ class Trustpilot
      * @return string
      */
     protected function gzdecode($data) {
-
+        return $data; //Mangirdas Skripka - don't use compressed api as it fails on some servers
         if (!$data) { return null; }
 
         return function_exists('gzdecode') ? gzdecode($data) : gzuncompress($data);
@@ -178,7 +179,7 @@ class Trustpilot
         $url = sprintf(self::FEED, $id);
 
         if (function_exists('curl_version')) {
-            
+
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_AUTOREFERER, TRUE);
@@ -193,7 +194,7 @@ class Trustpilot
             return $data;
         }
         else if (file_get_contents(__FILE__) && ini_get('allow_url_fopen')) {
-            
+
             return file_get_contents($url);
         }
         else {
@@ -226,10 +227,10 @@ class Trustpilot
         else {
             $data = $this->gzdecode($this->getFeed($id));
         }
-        
+
         if ($data) {
             $this->set(json_decode($data));
-        }  
+        }
     }
 
 }
